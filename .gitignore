@@ -17,5 +17,5 @@ wandb
 # runs
 hub
 *.mp4
-*.json
+# *.json
 venv
