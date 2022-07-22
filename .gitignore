@@ -14,7 +14,7 @@ htmlcov/
 git_rewrite_commit_history.sh
 .vscode/
 wandb
-runs
+# runs
 hub
 *.mp4
 *.json
