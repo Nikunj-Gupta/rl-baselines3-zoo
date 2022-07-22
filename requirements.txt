@@ -1,7 +1,8 @@
 gym==0.21
 stable-baselines3[extra,tests,docs]>=1.6.0
 sb3-contrib>=1.6.0
-box2d-py==2.3.8
+# box2d-py==2.3.8
+box2d-kengz
 pybullet
 gym-minigrid
 scikit-optimize
@@ -17,3 +18,6 @@ wandb
 ale-py==0.7.4 # tmp fix: until new SB3 version is released
 # TODO: replace with release
 git+https://github.com/huggingface/huggingface_sb3
+# For EpiPolicy 
+numba
+sympy

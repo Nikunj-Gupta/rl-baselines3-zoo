@@ -43,3 +43,23 @@ docker-gpu:
 	USE_GPU=True ./scripts/build_docker.sh
 
 .PHONY: docker lint type pytest
+
+
+#test_custom 
+run: 
+	python3 train.py \
+	--algo sac \
+	--env EpiEnv-v0 \
+	-n 50000 \
+	-optimize \
+	--sampler tpe --pruner median \
+	--optimization-log-path summaries/EpiEnv-v0/ \
+	--tensorboard-log summaries \
+	--n-trials 1000 \
+	--n-jobs 2 \
+	--eval-freq 10000 --eval-episodes 10 --n-eval-envs 1 \
+	--save-freq 10000 
+
+
+req: 
+	pip3 install -r requirements.txt

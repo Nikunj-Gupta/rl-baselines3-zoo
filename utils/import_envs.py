@@ -1,7 +1,13 @@
+import json 
 import gym
 from gym.envs.registration import register
-
+from epipolicy_environment import EpiEnv 
 from utils.wrappers import MaskVelocityWrapper
+
+try:
+    import epipolicy_environment  # pytype: disable=import-error
+except ImportError:
+    epipolicy_envs = None 
 
 try:
     import pybullet_envs  # pytype: disable=import-error
@@ -60,3 +66,17 @@ for env_id in MaskVelocityWrapper.velocity_indices.keys():
         id=f"{name}NoVel-v{version}",
         entry_point=create_no_vel_env(env_id),
     )
+# Custom Environment 
+# ----------------------------------------
+def create_epipolicy_env():
+    def make_env(): 
+        scenario_json = "jsons/SIRV_A.json" 
+        scenario = json.loads(open(scenario_json, "r").read()) 
+        env = EpiEnv(scenario) 
+        return env
+    return make_env
+
+register(
+    id="EpiEnv-v0",
+    entry_point=create_epipolicy_env(),
+)
