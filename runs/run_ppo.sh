@@ -3,8 +3,8 @@
 #SBATCH --cpus-per-task=16 
 #SBATCH --time=24:00:00
 #SBATCH --mem=40GB
-#SBATCH --job-name=epipolicy_hyperparameter_opt
-#SBATCH --output=epipolicy_hyperparameter_opt.out
+#SBATCH --job-name=epipolicy_hyperparameter_opt_ppo
+#SBATCH --output=epipolicy_hyperparameter_opt_ppo.out
 
 source ./venv/bin/activate
 
