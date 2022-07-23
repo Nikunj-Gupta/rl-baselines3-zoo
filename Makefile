@@ -48,12 +48,12 @@ docker-gpu:
 #test_custom 
 run: 
 	python3 train.py \
-	--algo sac \
-	--env EpiEnv-v0 \
+	--algo ppo \
+	--env CartPole-v1 \
 	-n 50000 \
 	-optimize \
-	--sampler tpe --pruner median \
-	--optimization-log-path summaries/EpiEnv-v0/ \
+	--sampler skopt --pruner halving \
+	--optimization-log-path summaries/CartPole-v1/ \
 	--tensorboard-log summaries \
 	--n-trials 1000 \
 	--n-jobs 2 \
@@ -66,3 +66,6 @@ req:
 
 dist_run: 
 	python3 train.py --algo ppo --env MountainCar-v0 -optimize --study-name test --storage sqlite:///example.db
+
+save_hyperparameters: 
+	python scripts/parse_study.py -i logs/ppo/report_MountainCar-v0_500-trials-1000000-tpe-median_1658558124.pkl --print-n-best-trials 10 --save-n-best-hyperparameters 10 

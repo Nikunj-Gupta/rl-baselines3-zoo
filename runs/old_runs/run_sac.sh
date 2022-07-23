@@ -2,7 +2,7 @@
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=32 
 #SBATCH --time=24:00:00
-#SBATCH --mem=40GB
+#SBATCH --mem=128GB
 #SBATCH --gres=gpu:1
 #SBATCH --job-name=epipolicy_hyperparameter_opt_sac2
 #SBATCH --output=epipolicy_hyperparameter_opt_sac2.out
