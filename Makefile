@@ -62,4 +62,7 @@ run:
 
 
 req: 
-	pip3 install -r requirements.txt
+	pip3 install -r requirements.txt 
+
+dist_run: 
+	python3 train.py --algo ppo --env MountainCar-v0 -optimize --study-name test --storage sqlite:///example.db
