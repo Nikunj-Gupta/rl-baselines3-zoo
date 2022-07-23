@@ -3,7 +3,6 @@
 #SBATCH --cpus-per-task=16 
 #SBATCH --time=24:00:00
 #SBATCH --mem=256GB
-#SBATCH --gres=gpu:1
 #SBATCH --job-name=epipolicy_hyperparameter_opt_ppo3
 #SBATCH --output=epipolicy_hyperparameter_opt_ppo3.out
 
