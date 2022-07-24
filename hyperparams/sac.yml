@@ -1,8 +1,5 @@
 EpiEnv-v0:
-  n_envs: 8
-  n_timesteps: 20000
-  policy: 'MlpPolicy'
-  learning_rate: !!float 1e-3
+  n_envs: 4
 
 # Tuned
 MountainCarContinuous-v0:
