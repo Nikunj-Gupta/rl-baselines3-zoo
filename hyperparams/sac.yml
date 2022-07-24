@@ -1,5 +1,6 @@
 EpiEnv-v0:
   n_envs: 4
+  n_timesteps: 30000
 
 # Tuned
 MountainCarContinuous-v0:

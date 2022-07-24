@@ -1,5 +1,6 @@
 EpiEnv-v0:
-  n_envs: 4
+  n_envs: 8
+  n_timesteps: !!float 3e4
 
 atari:
   env_wrapper:
